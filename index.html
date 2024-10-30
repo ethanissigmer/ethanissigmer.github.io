@@ -125,7 +125,7 @@
         <h2>💼 Hire Me</h2>
         <p>If you're interested in collaborating or need my services, please fill out the form below:</p>
         <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Discord Account" required>
+        <input type="text" id="discord" placeholder="Your Discord Account" required>
         <textarea id="description" rows="4" placeholder="Describe what you need..." required></textarea>
         <button onclick="sendMessage()">Send Message</button>
     </div>
@@ -138,7 +138,7 @@
 <script>
     async function sendMessage() {
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        const discord = document.getElementById('discord').value;
         const description = document.getElementById('description').value;
 
         const webhookURL = 'https://discord.com/api/webhooks/1300922475470917682/fjMMz9rVZAZ9NDosNUrqmpMEo28UEoAurnyO8bWePhlt62dh2RJ_9bnXrAXGT_o3-Yu8';
@@ -154,7 +154,7 @@
         }
 
         const message = {
-            content: `New Hire Request:\n**Name:** ${name}\n**Email:** ${email}\n**Description:** ${description}`
+            content: `New Hire Request:\n**Name:** ${name}\n**Discord:** ${discord}\n**Description:** ${description}`
         };
 
         try {
@@ -172,7 +172,7 @@
                 localStorage.setItem('lastSubmission', now);
                 // Clear the form fields
                 document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
+                document.getElementById('discord').value = '';
                 document.getElementById('description').value = '';
             } else {
                 alert('There was an error sending your message. Please try again later.');
