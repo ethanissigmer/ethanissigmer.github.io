@@ -1,188 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - ethandevz</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #e9ecef;
-            color: #343a40;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .container:hover {
-            transform: scale(1.02);
-        }
-        h1 {
-            text-align: center;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-        .profile-pic {
-            display: block;
-            margin: 20px auto; /* Centering the profile picture */
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            background-image: url('back.jpg'); /* Replace with your image URL */
-            background-size: cover;
-            border: 5px solid #007bff;
-            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-        }
-        h2 {
-            color: #007bff;
-            margin-top: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-            padding: 10px;
-            background: #f8f9fa;
-            border-left: 5px solid #007bff;
-            transition: background 0.3s;
-        }
-        li:hover {
-            background: #e2e6ea;
-        }
-        p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #6c757d;
-        }
-        .hire-me {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        .hire-me h2 {
-            margin-bottom: 15px;
-        }
-        .hire-me input, .hire-me textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-        }
-        .hire-me button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .hire-me button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/d0c5025972.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="./pfp.jpg">
+    <title>YourName's Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-
-<div class="container">
-    <h1>About Me</h1>
-    <div class="profile-pic"></div>
-    <h2>👋 Hello! I'm ethandevz!</h2>
-    <p>
-        I am a passionate and dedicated developer with over <strong>1 year of experience</strong> in the world of scripting and programming. My journey began in the vibrant universe of <strong>Roblox</strong>, where I discovered my love for creating immersive experiences through scripting. Since then, I have honed my skills in Lua, mastering the nuances of game development and interactive storytelling.
-    </p>
-
-    <h2>My Expertise:</h2>
-    <ul>
-        <li><strong>Roblox Scripting:</strong> Specializing in engaging gameplay mechanics, custom game features, and interactive elements.</li>
-        <li><strong>User Interfaces:</strong> Crafting intuitive and visually appealing UI elements.</li>
-        <li><strong>Optimization:</strong> Ensuring smooth performance and responsiveness in all my games.</li>
-    </ul>
-
-    <h2>Discord Bot Development:</h2>
-    <ul>
-        <li><strong>Custom Commands:</strong> Creating tailored commands for specific community needs.</li>
-        <li><strong>Integrations:</strong> Linking various APIs to enhance bot functionality.</li>
-        <li><strong>Community Engagement:</strong> Building bots that foster interaction and engagement within communities.</li>
-    </ul>
-
-    <div class="hire-me">
-        <h2>💼 Hire Me</h2>
-        <p>If you're interested in collaborating or need my services, please fill out the form below:</p>
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="text" id="discord" placeholder="Your Discord Account" required>
-        <textarea id="description" rows="4" placeholder="Describe what you need..." required></textarea>
-        <button onclick="sendMessage()">Send Message</button>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 ethandevz. All rights reserved.</p>
-    </div>
-</div>
-
-<script>
-    async function sendMessage() {
-        const name = document.getElementById('name').value;
-        const discord = document.getElementById('discord').value;
-        const description = document.getElementById('description').value;
-
-        const webhookURL = 'https://discord.com/api/webhooks/1300922475470917682/fjMMz9rVZAZ9NDosNUrqmpMEo28UEoAurnyO8bWePhlt62dh2RJ_9bnXrAXGT_o3-Yu8';
-
-        // Check the last submission time
-        const lastSubmission = localStorage.getItem('lastSubmission');
-        const now = new Date().getTime();
-
-        // If last submission exists and it's less than 24 hours ago
-        if (lastSubmission && (now - lastSubmission < 24 * 60 * 60 * 1000)) {
-            alert('You can only send a message once every 24 hours. Please try again later.');
-            return;
-        }
-
-        const message = {
-            content: `New Hire Request:\n**Name:** ${name}\n**Discord:** ${discord}\n**Description:** ${description}`
-        };
-
-        try {
-            const response = await fetch(webhookURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(message)
-            });
-
-            if (response.ok) {
-                alert('Your message has been sent successfully!');
-                // Store the current time in local storage
-                localStorage.setItem('lastSubmission', now);
-                // Clear the form fields
-                document.getElementById('name').value = '';
-                document.getElementById('discord').value = '';
-                document.getElementById('description').value = '';
-            } else {
-                alert('There was an error sending your message. Please try again later.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error sending your message. Please check your connection and try again.');
-        }
-    }
-</script>
-
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="banner">
+        <img src="./backgrounds/cool.gif" alt="Banner Image" class="blurred-img">
+        <div class="profile">
+            <img src="./pfp.jpg" alt="Profile Image">
+            <h1>YourName's Portfolio</h1>
+            <a href="https://github.com/YourName" class="social-icons"><i class="fa-brands fa-github fa-2x white-icon"></i></a>
+            <a href="https://discord.gg/Invite" class="social-icons"><i class="fa-brands fa-discord fa-2xl white-icon"></i></a>
+        </div>
+    </section>
+    <section class="projects">
+        <div class="project">
+            <div class="horizontal-separator"></div>
+            <div class="project-content">
+                <img src="projectsimgs/exampleprojectimage.png" alt="SolarHosting Logo" class="project-image">
+                <div class="separator"></div>
+                <div class="project-text">
+                    <h2>Project 1</h2>
+                    <p>
+                        Some text talking about this project so people know what is it and how cool it what I dont know
+                        but in what you want do like 5 - 6 sentences thats what I did for the one I did anyways have fun
+                        with it :)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-separator"></div>
+        <div class="project">
+            <div class="project-content">
+                <div class="project-text-right">
+                    <h2>Project 2</h2>
+                    <p>
+                        Some text talking about this project so people know what is it and how cool it what I dont know
+                        but in what you want do like 5 - 6 sentences thats what I did for the one I did anyways have fun
+                        with it :)
+                    </p>
+                </div>
+                <div class="separator"></div>
+                <img src="projectsimgs/exampleprojectimage.png" alt="Project Image" class="project-image">
+            </div>
+        </div>
+        <div class="horizontal-separator"></div>
+        <div class="project">
+            <div class="project-content">
+                <img src="projectsimgs/exampleprojectimage.png" alt="Project Image" class="project-image">
+                <div class="separator"></div>
+                <div class="project-text">
+                    <h2>Project 3</h2>
+                    <p>
+                        Some text talking about this project so people know what is it and how cool it what I dont know
+                        but in what you want do like 5 - 6 sentences thats what I did for the one I did anyways have fun
+                        with it :)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-separator"></div>
+    </section>
+    <footer>
+        <p style="text-align: center; margin: 20px 0;">
+            Copyright <a href="https://github.com/OddDevelopment/GlampPortfolio" target="_blank">GlampPortfolio</a> by
+            <a href="https://odd.rip" target="_blank">Odd</a>
+        </p>
+    </footer>
 </body>
+
 </html>
