@@ -1,94 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<meta content="ethandevz.xyz" property="og:title" />
-<meta content="This is all my projects! These include SkyForge Hosting, Aces of Roblox and my experiences." property="og:description" />
-<meta content="https://ethandevz.xyz/" property="og:url" />
-<meta content="https://ethandevz.xyz/betterback.png" property="og:image" />
-<meta content="#43B581" data-react-helmet="true" name="theme-color" />
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/d0c5025972.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="./betterback.png">
-    <title>ethandevz's Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replica Interface</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: monospace;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      width: 90%;
+      max-width: 1000px;
+    }
+    .block {
+      background-color: #222;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+    .left-panel, .right-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .info-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .info-block img {
+      max-width: 120px;
+      border-radius: 8px;
+    }
+    .info-block pre {
+      margin: 0;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+    .media {
+      text-align: center;
+    }
+    .media img {
+      width: 120px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .media p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .terminal {
+      background-color: #222;
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 8px;
+    }
+    .time-block pre {
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="https://discord.gg/VvwwC6ktUA">SkyForge Hosting Discord</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="banner">
-        <img src="./backgrounds/cool.gif" alt="Banner Image" class="blurred-img">
-        <div class="profile">
-            <img src="./betterback.png" alt="Profile Image">
-            <h1>ethandevz's Portfolio</h1>
-            <!--<a href="https://github.com/ethanissigmer" class="social-icons"><i class="fa-brands fa-github fa-2x white-icon"></i></a>-->
-            <a href="https://discord.gg/VvwwC6ktUA" class="social-icons"><i class="fa-brands fa-discord fa-2xl white-icon"></i></a>
-        </div>
-    </section>
-    <section class="projects">
-        <div class="project">
-            <div class="horizontal-separator"></div>
-            <div class="project-content">
-                <img src="./projectsimgs/skyforge.png" alt="SkyForge Logo" class="project-image">
-                <div class="separator"></div>
-                <div class="project-text">
-                    <h2>SkyForge Hosting</h2>
-                    <p>
-                        SkyForge Hosting is a paid (soon to-be free and paid) reliable hosting provider.
-                        We strive to impress our members with our 24/7 uptime and fully reliability.
-                        If you would like to be a part of this project, join https://discord.gg/VvwwC6ktUA
-                    </p>
-                </div>
-                <!-- Discord Widget Iframe -->
-                <iframe src="https://discord.com/widget?id=1296568930835632241&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-            </div>
-        </div>
-        <div class="horizontal-separator"></div>
-        <div class="project">
-            <div class="project-content">
-                <div class="project-text-right">
-                    <h2>Aces of Roblox: War in the Skies</h2>
-                    <p>
-                        This game is all about war. What you do in this game is you start off in level 1,
-                        and you make your way up by destroying other planes for coins. This game is in beta.
-                        It is sort of War Thunder.
-                    </p>
-                </div>
-                <div class="separator"></div>
-                <img src="./projectsimgs/warrr.jpg" alt="Ace Image" class="project-image">
-            </div>
-        </div>
-        <div class="horizontal-separator"></div>
-        <div class="project">
-            <div class="project-content">
-                <img src="./projectsimgs/blox.png" alt="Project Image" class="project-image">
-                <div class="separator"></div>
-                <div class="project-text">
-                    <h2>Roblox Scripter</h2>
-                    <p>
-                        I am an experienced Roblox scripter, with lots of knowledge.
-                        I develop for the group "Blox Channel" and "Relatable".
-                        Blox Channel is a community group with 175k+ members. 
-                        With a great community, we strive to impress as ro-developers.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="horizontal-separator"></div>
-    </section>
-    <footer>
-        <p style="text-align: center; margin: 20px 0;">
-            &copy; 2024 ethandevz. All rights reserved.
-        </p>
-    </footer>
-</body>
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <!-- Image and Info Block -->
+      <div class="block info-block">
+        <img src="https://cdn.discordapp.com/attachments/1276387299097055285/1309969377092964422/bo_sinn.png?ex=67457dcd&is=67442c4d&hm=d24e8eab3f4f61ff893bbfcf3fc75d980e775269cdc658e2dbc6674d7c7507b6&" alt="User Image">
+        <pre>
+Host: ethandevz
+OS: Windows 11
+Architecture: x64
+Contact: ethandevz
 
+FPS: 120
+Location: Bo Sinn's House
+Connection: ESTABLISHED
+Session Number: 5
+        </pre>
+      </div>
+      <!-- Terminal Block -->
+      <div class="block terminal">
+        <a href="https://ethandevz.xyz/portfolio" target="_blank">sudo login -u anonymous -ru "Ethan's Portfolio"</a>
+      </div>
+    </div>
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <!-- Time Block -->
+      <div class="block time-block">
+        <pre id="time-block">/time          25-11-2024 09:06 AM</pre>
+      </div>
+      <!-- Media Block -->
+      <div class="block media">
+        <img src="https://i.scdn.co/image/ab67616d00001e02445bcfbcfa2cdebce38764d3" alt="a">
+        <p>Song: <b>Bo Sinn's Theme</b></p>
+        <p>Author: <b>fam0uz</b></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Function to format and display the current date and time
+    function updateTime() {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('en-GB'); // Format as DD-MM-YYYY
+      const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }); // Format as HH:MM AM/PM
+      const timeBlock = document.getElementById('time-block');
+      timeBlock.textContent = `/time          ${formattedDate} ${formattedTime}`;
+    }
+
+    // Update time on page load
+    updateTime();
+
+    // Optional: Update time every minute
+    setInterval(updateTime, 60000);
+  </script>
+</body>
 </html>
