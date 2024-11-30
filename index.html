@@ -1,145 +1,144 @@
-<!DOCTYPE html>
-
-<meta content="ethan's linux" property="og:title" />
-<meta content="ethans linux home" property="og:description" />
-<meta content="https://ethandevz.xyz/" property="og:url" />
-<meta content="https://ethandevz.xyz/betterback.png" property="og:image" />
-<meta content="#43B581" data-react-helmet="true" name="theme-color" />
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>linux</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ethandevz.xyz" property="og:title"/>
+  <meta content="This is all my projects! These include SkyForge Hosting, Aces of Roblox and my experiences." property="og:description"/>
+  <meta content="https://ethandevz.xyz/" property="og:url"/>
+  <meta content="https://ethandevz.xyz/betterback.png" property="og:image"/>
+  <meta content="#43B581" data-react-helmet="true" name="theme-color"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="./betterback.png" rel="icon" type="image/x-icon"/>
+  <title>Ethan Devz Portfolio</title>
   <style>
     body {
-      background-color: #111;
-      color: white;
-      font-family: monospace;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a202c;
+      color: #f7fafc;
     }
-    .container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-      width: 90%;
-      max-width: 1000px;
+    .hero {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz2sWd3jdUnuTs83Kg-aUx0dBWQ3bHQQeIHg&s');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      position: relative;
     }
-    .block {
-      background-color: #222;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    }
-    .left-panel, .right-panel {
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 15px;
-    }
-    .info-block {
-      display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: center;
     }
-    .info-block img {
-      max-width: 120px;
-      border-radius: 8px;
-    }
-    .info-block pre {
-      margin: 0;
-      font-size: 14px;
-      white-space: pre-wrap;
-    }
-    .media {
-      text-align: center;
-    }
-    .media img {
-      width: 120px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .media p {
-      margin: 0;
-      font-size: 14px;
-    }
-    .terminal {
-      background-color: #222;
-      color: rgb(255, 255, 255);
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 8px;
-    }
-    .time-block pre {
-      text-align: center;
-      font-size: 14px;
-      padding: 10px;
-    }
-    .terminal a {
-      color: white;
-      text-decoration: none;
-    }
-    .terminal a:hover {
-      text-decoration: underline;
+    .section {
+      background-color: #2d3748;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Left Panel -->
-    <div class="left-panel">
-      <!-- Image and Info Block -->
-      <div class="block info-block">
-        <img src="./bosinn.png" alt="User Image">
-        <pre>
-Host: ethandevz
-OS: Windows 11
-Architecture: x64
-Contact: ethandevz
+  <!-- Header -->
+  <header class="bg-gray-800 p-4">
+    <nav class="container mx-auto flex justify-between items-center">
+      <ul class="flex space-x-4">
+        <li>
+          <a class="text-white hover:text-gray-400" href="https://skyforgehosting.xyz">SkyForge Hosting Website</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-FPS: 120
-Location: Bo Sinn's House
-Connection: ESTABLISHED
-Session Number: 5
-        </pre>
-      </div>
-      <!-- Terminal Block -->
-      <div class="block terminal">
-        <a href="https://ethandevz.xyz/portfolio" target="_blank">sudo login -u anonymous -ru "Ethan's Portfolio"</a>
-      </div>
-    </div>
-    <!-- Right Panel -->
-    <div class="right-panel">
-      <!-- Time Block -->
-      <div class="block time-block">
-        <pre id="time-block">/time          25-11-2024 09:06 AM</pre>
-      </div>
-      <!-- Media Block -->
-      <div class="block media">
-        <img src="https://i.scdn.co/image/ab67616d00001e02445bcfbcfa2cdebce38764d3" alt="a">
-        <p>Song: <b>Bo Sinn's Theme</b></p>
-        <p>Author: <b>fam0uz</b></p>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-overlay">
+      <img alt="Profile picture of Ethan" class="rounded-full mb-4" src="https://ethandevz.xyz/betterback.png" width="150" height="150"/>
+      <h1 class="text-4xl font-bold">Ethan Devz</h1>
+      <p class="text-xl mt-2">Lead Scripter at Blox Channel (175k+ Members)</p>
+      <div class="mt-4 space-x-4">
+        <a class="text-2xl text-white hover:text-gray-400" href="https://ethandevz.xyz/portfolio" target="_blank"><i class="fas fa-briefcase"></i></a>
+        <a class="text-2xl text-white hover:text-gray-400" href="https://discord.gg/VvwwC6ktUA" target="_blank"><i class="fab fa-discord"></i></a>
       </div>
     </div>
   </div>
-  <script>
-    // Function to format and display the current date and time
-    function updateTime() {
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('en-GB'); // Format as DD-MM-YYYY
-      const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }); // Format as HH:MM AM/PM
-      const timeBlock = document.getElementById('time-block');
-      timeBlock.textContent = `/time          ${formattedDate} ${formattedTime}`;
-    }
 
-    // Update time on page load
-    updateTime();
+  <!-- About Section -->
+  <div class="container mx-auto p-4">
+    <div class="section">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        Hi, I'm Ethan! I'm a passionate Roblox scripter and the Lead Scripter at Blox Channel, a group with over 175k members. I specialize in creating engaging and interactive scripts for Roblox games. When I'm not scripting, you can find me exploring new game mechanics, contributing to the Roblox community, or playing games.
+      </p>
+    </div>
+  </div>
 
-    // Optional: Update time every minute
-    setInterval(updateTime, 60000);
-  </script>
+  <!-- Projects Section -->
+  <div class="container mx-auto p-4 mt-8">
+    <div class="section">
+      <h2 class="text-3xl font-bold mb-4">Projects</h2>
+
+    SkyForge Hosting <div class="bg-gray-700 p-4 rounded-lg shadow-lg mb-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <img alt="SkyForge Logo" class="rounded-lg mb-4 md:mb-0 md:mr-4" src="https://skyforgehosting.xyz/skyforge.png" width="150" height="150"/>
+          <div>
+            <h3 class="text-2xl font-bold">SkyForge Hosting</h3>
+            <p class="text-lg leading-relaxed">
+              SkyForge Hosting is a paid and free reliable hosting provider. We strive to impress our members with our 24/7 uptime and full reliability. If you would like to be a part of this project, join
+              <a class="text-blue-400 hover:underline" href="https://discord.gg/VvwwC6ktUA" target="_blank">SkyForge Hosting Discord</a>.
+            </p>
+          </div>
+        </div>
+        <iframe allowtransparency="true" class="mt-4" frameborder="0" height="250" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" src="https://discord.com/widget?id=1296568930835632241&amp;theme=dark" width="300"></iframe>
+      </div>
+
+      <div class="bg-gray-700 p-4 rounded-lg shadow-lg mb-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:order-2 md:ml-4">
+            <img alt="Ace Image" class="rounded-lg mb-4 md:mb-0" src="https://ethandevz.xyz/projectsimgs/warrr.jpg" width="150" height="150"/>
+          </div>
+          <div class="md:order-1">
+            <h3 class="text-2xl font-bold">Aces of Roblox: War in the Skies</h3>
+            <p class="text-lg leading-relaxed">
+              This game is all about war. What you do in this game is you start off in level 1, and you make your way up by destroying other planes for coins. This game is in beta. It is sort of like War Thunder.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roblox Scripter -->
+      <div class="bg-gray-700 p-4 rounded-lg shadow-lg">
+        <div class="flex flex-col md:flex-row items-center">
+          <img alt="Project Image" class="rounded-lg mb-4 md:mb-0 md:mr-4" src="https://ethandevz.xyz/projectsimgs/developer.png" width="150" height="150"/>
+          <div>
+            <h3 class="text-2xl font-bold">Roblox Scripter</h3>
+            <p class="text-lg leading-relaxed">
+              I am an experienced Roblox scripter, with lots of knowledge. I develop for the group "Blox Channel" and "Relatable". Blox Channel is a community group with 175k+ members. With a great community, we strive to impress as ro-developers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="container mx-auto p-4 mt-8">
+    <div class="section">
+      <h2 class="text-3xl font-bold mb-4">Contact</h2>
+      <p class="text-lg leading-relaxed">
+        Feel free to reach out to me via email at
+        <a class="text-blue-400 hover:underline" href="mailto:ethandevz@example.com">ethan@ethandevz.xyz</a>
+        or connect with me on social media.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-4 mt-8">
+    <p class="text-center">&copy; 2024 Ethan Devz. All rights reserved.</p>
+  </footer>
 </body>
 </html>
